@@ -10,8 +10,15 @@ permissions:
 
 jobs:
   check:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     steps:
+      # Preserving LF checkout avoids false diffs when sync-skills writes LF.
+      - name: Configure git line endings
+        run: git config --global core.autocrlf false
+
       - uses: actions/checkout@v7
 
       - uses: actions/setup-node@v7
@@ -26,11 +33,14 @@ jobs:
 
       # The contrast table is a set of claims about a formula; recompute every row.
       - name: Contrast table matches the formula
-        run: python3 skills/antislop-human/contrast-check.py --selftest
+        shell: bash
+        run: |
+          python3 skills/antislop-human/contrast-check.py --selftest 2>/dev/null || python skills/antislop-human/contrast-check.py --selftest
 
       # skills/antislop/SKILL.md is generated from antislop.md, so an unsynced
       # core edit would ship a skill that disagrees with it.
       - name: Generated core skill is in sync with antislop.md
+        shell: bash
         run: |
           node cli/scripts/sync-skills.mjs
           git diff --exit-code -- skills/
@@ -44,3 +54,4 @@ jobs:
 
       - name: Installer smoke test
         run: node cli/scripts/smoke-test.mjs
+
