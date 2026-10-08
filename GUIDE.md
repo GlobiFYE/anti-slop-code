@@ -185,7 +185,7 @@ npx antislop-ai
 Answer the questions exactly as you did the first time. When it reaches folders you already have, it prints what it found before asking anything:
 
 ```
-▲ Already here: antislop 3.2.19. This installer carries 3.2.20.
+▲ Already here: antislop 3.2.20. This installer carries 3.2.21.
 ```
 
 Then it asks one extra question:
