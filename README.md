@@ -58,6 +58,15 @@ One file, run twice.
 
 Every image here opens full size if you click it.
 
+### Applied to an ops page
+
+`antislop-ui` with the core, applied to a plain weekly ops dashboard. Both links open live pages.
+
+- Before: https://skill-fixture-before.theroost.dev?vr_gallery=1
+- After: https://antislop-ui-after.theroost.dev?vr_gallery=1
+
+Illustrative, community-contributed example; not an official demo or benchmark.
+
 ## Install
 
 antislop ships as standard agent skills: one folder per skill, holding a `SKILL.md`. Installation differs per agent, so pick the section for the one you use. Each route is walked through from zero, with update and removal, in [GUIDE.md](GUIDE.md#install-update-and-remove).
