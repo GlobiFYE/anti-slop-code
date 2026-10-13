@@ -62,8 +62,8 @@ Every image here opens full size if you click it.
 
 `antislop-ui` with the core, applied to a plain weekly ops dashboard. Both links open live pages.
 
-- Before: https://skill-fixture-before.theroost.dev?vr_gallery=1
-- After: https://antislop-ui-after.theroost.dev?vr_gallery=1
+- Before: https://skill-fixture-before.theroost.dev
+- After: https://antislop-ui-after.theroost.dev
 
 Illustrative, community-contributed example; not an official demo or benchmark.
 
